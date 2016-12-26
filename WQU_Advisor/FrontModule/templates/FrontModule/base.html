@@ -1,0 +1,228 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WQUAdvisor - Forecast Market</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/icons/icomoon/styles.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/core.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/components.css'%}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/colors.css'%}" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	
+	<script type="text/javascript" src="{% static 'js/plugins/loaders/pace.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/core/libraries/jquery.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/core/libraries/bootstrap.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/loaders/blockui.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/nicescroll.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/drilldown.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/fab.min.js'%}"></script>
+	
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="{% static 'js/plugins/visualization/d3/d3.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/visualization/d3/d3_tooltip.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/styling/switchery.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/styling/uniform.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/forms/selects/bootstrap_multiselect.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/ui/moment/moment.min.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/pickers/daterangepicker.js'%}"></script>
+
+	<script type="text/javascript" src="{% static 'js/core/app.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/pages/dashboard.js'%}"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- /theme JS files -->
+	{% block head %}
+	{% endblock %}
+</head>
+
+<body class="navbar-bottom">
+
+	<!-- Page header -->
+	<div class="page-header page-header-inverse">
+
+		<!-- Main navbar -->
+		<div class="navbar navbar-inverse navbar-transparent">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html"><img src="{% static 'images/logo_light.png'%}" alt=""></a>
+
+				<ul class="nav navbar-nav pull-right visible-xs-block">
+					<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-grid3"></i></a></li>
+				</ul>
+			</div>
+
+			<div class="navbar-collapse collapse" id="navbar-mobile">
+				
+
+				<div class="navbar-right">
+					<ul class="nav navbar-nav">
+						<li class="dropdown dropdown-user">
+							<a class="dropdown-toggle" data-toggle="dropdown">
+								<img src="{% static 'images/placeholder.jpg'%}" alt="">
+								<span>Taeheum Cho</span>
+								<i class="caret"></i>
+							</a>
+
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="#"><i class="icon-user-plus"></i> My profile</a></li>
+								<li><a href="#"><i class="icon-coins"></i> My balance</a></li>
+								<li class="divider"></li>
+								<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /main navbar -->
+
+
+		<!-- Page header content -->
+		<div class="page-header-content">
+			<div class="page-title">
+				<h4>WQUAdvisor <small>without human intervention</small></h4>
+			</div>
+
+			<div class="heading-elements">
+				<ul class="breadcrumb heading-text">
+					<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+					<li class="active">Market Screen</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /page header content -->
+
+
+		<!-- Second navbar -->
+		<div class="navbar navbar-inverse navbar-transparent" id="navbar-second">
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+			<div class="navbar-collapse collapse" id="navbar-second-toggle">
+				<ul class="nav navbar-nav navbar-nav-material">
+					<li class="active"><a href="index.html">Market Screen</a></li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Market Pointer <span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu width-200">
+							<li><a href="#"><i class="icon-select2"></i>News Analysis</a></li>
+							<li><a href="#"><i class="icon-insert-template"></i>Equity Analysis</a></li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">	Trading Strategy <span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu width-200">
+							<li><a href="#"><i class="icon-select2"></i>News Analysis</a></li>
+							<li><a href="#"><i class="icon-insert-template"></i>Equity Analysis</a></li>
+						</ul>
+					</li>
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">	AI Advisor <span class="caret"></span></a>
+
+						<ul class="dropdown-menu width-200">
+							<li><a href="#"><i class="icon-select2"></i>News Analysis</a></li>
+							<li><a href="#"><i class="icon-insert-template"></i>Equity Analysis</a></li>
+						</ul>
+					</li>
+					
+					<li class="deactive"><a href="profile.html">Who Am I</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-nav-material navbar-right">
+					<li>
+						<a href="changelog.html">
+							<span class="status-mark status-mark-inline border-success-300 position-left"></span>
+							Changelog
+						</a>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-cog3"></i>
+							<span class="visible-xs-inline-block position-right">Settings</span>
+							<span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#"><i class="icon-user-lock"></i> Account security</a></li>
+							<li><a href="#"><i class="icon-statistics"></i> Analytics</a></li>
+							<li><a href="#"><i class="icon-accessibility"></i> Accessibility</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="icon-gear"></i> All settings</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /second navbar -->
+
+
+		
+
+	</div>
+	<!-- /page header -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+				{% block content %}{% endblock %}
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+
+	<!-- Footer -->
+	<div class="navbar navbar-default navbar-fixed-bottom footer">
+		<ul class="nav navbar-nav visible-xs-block">
+			<li><a class="text-center collapsed" data-toggle="collapse" data-target="#footer"><i class="icon-circle-up2"></i></a></li>
+		</ul>
+
+		<div class="navbar-collapse collapse" id="footer">
+			<div class="navbar-text">
+				&copy; 2017. <a href="#" class="navbar-link">WQU Advisor</a> by <a href="http://themeforest.net/user/Kopyov" class="navbar-link" target="_blank">Taeheum Cho</a>
+			</div>
+
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /footer -->
+	{% block scripts %}
+	{% endblock %}
+</body>
+</html>
