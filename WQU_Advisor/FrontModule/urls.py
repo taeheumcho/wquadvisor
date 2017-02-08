@@ -9,6 +9,7 @@ from . import views
 
 urlpatterns = [
     url(r'^wquadvisor/$', views.marketScreen, name='marketScreen'),
+    url(r'^wquadvisor/chart_data_json/', views.chart_data_json, name = 'chart_data_json'),
     url(r'^wquadvisor/tradingStrategy/backTest/$', views.backTest, name='bakcTest')
 #     url(r'^aiadvisor/backtest/$', views.backTestHome, name='backTestHome'),
 #     url(r'^roboadvisor/backtest/$', views.backTestHome, name='backtest'),

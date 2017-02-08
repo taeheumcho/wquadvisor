@@ -4,7 +4,8 @@
 {% block head %}
 <script type='text/javascript'>
 $(function () {
-    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-ohlcv.json&callback=?', function (data) {
+	var ChartDataURL =  "{% url 'chart_data_json' %}";
+    $.getJSON('chart_data_json', function (data) {
 
         // split the data set into ohlc and volume
         var ohlc = [],
@@ -23,7 +24,7 @@ $(function () {
 
         for (i; i < dataLength; i += 1) {
             ohlc.push([
-                data[i][0], // the date
+                data[i][0],
                 data[i][1], // open
                 data[i][2], // high
                 data[i][3], // low
@@ -45,7 +46,7 @@ $(function () {
             },
 
             title: {
-                text: 'AAPL Historical'
+                text: 'KOSPI Index'
             },
 
             yAxis: [{
@@ -54,7 +55,7 @@ $(function () {
                     x: -3
                 },
                 title: {
-                    text: 'OHLC'
+                    text: 'Index'
                 },
                 height: '60%',
                 lineWidth: 2
@@ -64,7 +65,7 @@ $(function () {
                     x: -3
                 },
                 title: {
-                    text: 'Volume'
+                    text: 'Volume(won)'
                 },
                 top: '65%',
                 height: '35%',
@@ -73,12 +74,14 @@ $(function () {
             }],
 
             tooltip: {
-                split: true
+                split: true,   
+                valueDecimals: 2,
+                thousandsSep: ','
             },
 
             series: [{
                 type: 'candlestick',
-                name: 'AAPL',
+                name: 'KOSPI',
                 data: ohlc,
                 dataGrouping: {
                     units: groupingUnits
@@ -100,6 +103,8 @@ $(function () {
 
 {% block content %}
 <div id="container" style="height: 400px; min-width: 310px" data-highcharts-chart="0"></div>
+{{prices}}
+
 {% endblock %}
 
 {% block scripts %}

@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'madb',
-        'USER': 'root',
-        'PASSWORD':'1qaz2wsx',
-        'HOST':'61.96.111.175',
+        'USER': 'kiruda',
+        'PASSWORD':'1234qweras',
+        'HOST':'117.52.87.204',
         'PORT':'3306',
     }
 }
