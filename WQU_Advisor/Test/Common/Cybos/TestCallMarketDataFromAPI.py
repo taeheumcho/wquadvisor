@@ -17,7 +17,8 @@ instance = CallMarketDataFromAPI([codes])
 perioddata = instance.callDataOnPeriod(Period('20001206', '20161226'),code="U001",targetField = (0,2,3,4,5,9))
 indexPriceJason = json.dumps(perioddata["U001"])
 
-# print(indexPriceJason)
+
+print(indexPriceJason)
 # print(len(indexPriceJason))
 # print(indexPriceJason[0][0])
 

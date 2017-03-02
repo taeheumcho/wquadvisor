@@ -8,7 +8,6 @@ import _thread
 
 from hmmlearn.hmm import GaussianHMM
 
-from AIMapper.models import StockData
 from engine.portfolio.strategy.AbstractStrategy import AbstractStrategy
 import numpy as np
 

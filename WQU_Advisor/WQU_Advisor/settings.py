@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'WQU_Advisor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'madb',
-        'USER': 'kiruda',
-        'PASSWORD':'1234qweras',
-        'HOST':'117.52.87.204',
+        'NAME': 'wquadvisor',
+        'USER': 'thcho',
+        'PASSWORD':'12345',
+        'HOST':'61.96.111.155',
         'PORT':'3306',
     }
 }
